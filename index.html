@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三月七的个人网站</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <!-- 添加可爱字体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 添加音频元素 -->
+    <audio id="background-music" loop>
+        <source src="蕉蕉.m4a" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- 添加泡泡容器 -->
+    <div id="bubble-container"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#about">关于三月七</a></li>
+                <li><a href="#portfolio">三月七的作品集</a></li>
+                <li><a href="#ai-chat">三月七的AI助手</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="carousel">
+                <!-- 照片轮播将通过JavaScript动态添加 -->
+            </div>
+        </section>
+
+        <section id="about">
+            <img src="images/38204ad934d4814c2f158820d74fd22e.jpeg" alt="三月七的头像" class="avatar">
+            <div class="bio">
+                <h2>关于三月七</h2>
+                <p>
+                    大家好呀！我是三月七，星穹列车的列车员 (≧▽≦)ﾉ 虽然有时候会有点冒冒失失的，但我会努力帮助每一位乘客哒！(๑•̀ㅂ•́)و✧ 我最喜欢的就是和大家一起冒险，解开各种谜题 (´｡• ω •｡`) ♡ 虽然记性不太好，但我会用心记住每一次相遇呢～如果在列车上看到我，一定要来打个招呼哦！(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧ 让我们一起，开启一段奇妙的星际之旅吧！(づ｡◕‿‿◕｡)づ
+                </p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2>三月七的作品</h2>
+            <div class="portfolio-grid">
+                <!-- 作品集将通过JavaScript动态添加 -->
+            </div>
+        </section>
+
+        <section id="ai-chat">
+            <h2>和小三月聊天</h2>
+            <div class="chat-container">
+                <div class="chat-history"></div>
+                <div class="chat-input">
+                    <textarea placeholder="输入您的问题..."></textarea>
+                    <button id="send-btn">发送</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.bilibili.com/video/BV1c4421Q7Cj/?spm_id_from=333.999.0.0&vd_source=9059757c11511bcf3bb921f5d919fa3a" class="social-icon" target="_blank">
+                <i class="fab fa-qq"></i> 三月七的QQ
+            </a>
+            <a href="https://www.bilibili.com/video/BV1VY4y1a78f/?spm_id_from=333.337.search-card.all.click&vd_source=9059757c11511bcf3bb921f5d919fa3a" class="social-icon" target="_blank">
+                <i class="fab fa-weixin"></i> 三月七的微信
+            </a>
+            <a href="https://www.bilibili.com/video/BV1bHWpehE53/?spm_id_from=333.999.0.0&vd_source=9059757c11511bcf3bb921f5d919fa3a" class="social-icon" target="_blank">
+                <i class="fas fa-book"></i> 三月七的小红书
+            </a>
+        </div>
+        <p>&copy; 2023 三月七的个人网站. 保留所有权利.</p>
+    </footer>
+
+    <button id="back-to-top" title="返回顶部">↑</button>
+
+    <script src="script.js"></script>
+    <script>
+        // 创建泡泡
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            
+            const size = Math.random() * 60 + 20; // 20px to 80px
+            bubble.style.width = `${size}px`;
+            bubble.style.height = `${size}px`;
+            
+            bubble.style.left = `${Math.random() * 100}vw`;
+            bubble.style.animationDuration = `${Math.random() * 5 + 5}s`; // 5s to 10s
+            
+            document.getElementById('bubble-container').appendChild(bubble);
+            
+            setTimeout(() => {
+                bubble.remove();
+            }, 10000); // 移除泡泡，防止DOM过大
+        }
+
+        // 每200ms创建一个泡泡
+        setInterval(createBubble, 200);
+    </script>
+</body>
+</html>
